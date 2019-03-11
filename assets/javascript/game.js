@@ -1,7 +1,7 @@
 
 
 
-var wordChoices = ["malcolm reynolds", "han solo", "rick sanchez", "morpheus", "turanga leela", "william adama", "the doctor", "zaphod beeblebrox", "jean-luc picard", "james t kirk", "john robinson", "captain dallas"];
+var wordChoices = ["reynolds", "han solo", "rick sanchez", "morpheus", "leela", "william adama", "the doctor", "zaphod beeblebrox", "picard", "kirk", "robinson", "dallas"];
 
 // var to hold scores
 var wins = 0;
@@ -60,15 +60,16 @@ function startGame() {
                 found = true;
             
                 }
-            }   
+            } 
+                
         
         if (found) return;
 
         if (wrongLetters.indexOf(userGuess) < 0) {
           wrongLetters.push(userGuess);
           document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
-          guessesRemaining;
-          updateImage();
+          guessesRemaining--;
+         
           document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
           console.log(guessesRemaining);
         }
