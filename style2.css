@@ -1,5 +1,5 @@
 body {
-    background: url(The-Colors-of-Universe-Wallpaper.jpg);
+    background: url(assets/images/The-Colors-of-Universe-Wallpaper.jpg);
     color: whitesmoke;
 }
 
@@ -31,6 +31,9 @@ body {
                    -20px -20px 50px rgba(255, 255, 255, .5);
     }
   }
+img {
+  border-radius: 25px;
+}
 
   h1 {
       color: #104e8b;
