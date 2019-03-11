@@ -1,7 +1,7 @@
 
 
 
-var wordChoices = ["reynolds", "han solo", "rick sanchez", "morpheus", "leela", "william adama", "the doctor", "zaphod beeblebrox", "picard", "kirk", "robinson", "dallas"];
+var wordChoices = ["reynolds", "solo", "ricksanchez", "morpheus", "leela", "adama", "doctor", "beeblebrox", "picard", "kirk", "robinson", "dallas"];
 
 // var to hold scores
 var wins = 0;
@@ -34,6 +34,7 @@ function startGame() {
       lettersInWord[i] = "__";
     }
     guessesRemaining = 10;
+    wrongLetters = [];
     document.getElementById("currentword-text").innerHTML = lettersInWord.join(" ");
     document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
     document.getElementById("wrongGuesses").innerHTML = (" ");
@@ -43,8 +44,24 @@ function startGame() {
 
   }
 
-  function updateImage() {
-    document.getElementById("airlock-image").src ="../images/airlock" + (guessesRemaining) + ".jpg";
+
+   function updateImage() {
+     var image = document.getElementById("airlock-image");
+     if (guessesRemaining === 9) {
+        image.src = "./assets/images/airlock9.jpg";
+     } if (guessesRemaining === 8) {
+      image.src = "./assets/images/airlock8.jpg";
+     }  if (guessesRemaining === 7) {
+      image.src = "./assets/images/airlock7.jpg";
+     }  if (guessesRemaining === 6) {
+      image.src = "./assets/images/airlock6.jpg";
+     }  if (guessesRemaining === 5) {
+      image.src = "./assets/images/airlock5.jpg";
+     }  if (guessesRemaining === 4) {
+      image.src = "./assets/images/airlock4.jpg";
+     }  if (guessesRemaining === 0) {
+      image.src = "./assets/images/airlock0.jpg";
+     }
 };
   
   function lettersGuessed() {
@@ -58,10 +75,10 @@ function startGame() {
               lettersInWord[i] = userGuess;
                 document.getElementById("currentword-text").innerHTML = lettersInWord.join(" ");
                 found = true;
-            
+               
                 }
             } 
-                
+
         
         if (found) return;
 
@@ -69,16 +86,21 @@ function startGame() {
           wrongLetters.push(userGuess);
           document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
           guessesRemaining--;
-         
+          
           document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
+         
           console.log(guessesRemaining);
+          
         }
+        updateImage();
+
         if (guessesRemaining <= 0) {
           losses++;
           lossesText.textContent = losses + 1;
           startGame();
         }
       }
+      
     }
      
   
