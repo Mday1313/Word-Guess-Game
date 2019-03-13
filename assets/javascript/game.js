@@ -1,6 +1,6 @@
 // declare array with all the word for the game
 
-var wordChoices = ["mal reynolds", "han solo", "rick sanchez", "morpheus", "turanga leela", "william adama", "the doctor", "zaphod beeblebrox", "picard", "kirk", "john robinson", "dallas"];
+var wordChoices = ["roy batty", "khan singh", "rick sanchez", "sentinels", "daleks", "weeping angels", "xenomorph queen", "darth vader", "the republic", "reavers", "agent smith", "vogons", "the borg", "cthulhu", "klingons", "cylons"];
 
 // Create variables to hold scores and guesses remaining
 // var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
