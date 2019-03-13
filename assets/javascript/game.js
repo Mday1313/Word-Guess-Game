@@ -1,6 +1,6 @@
 // declare array with all the word for the game
 
-var wordChoices = ["reynolds", "solo", "ricksanchez", "morpheus", "leela", "adama", "doctor", "beeblebrox", "picard", "kirk", "robinson", "dallas"];
+var wordChoices = ["mal reynolds", "han solo", "rick sanchez", "morpheus", "turanga leela", "william adama", "the doctor", "zaphod beeblebrox", "picard", "kirk", "john robinson", "dallas"];
 
 // Create variables to hold scores and guesses remaining
 // var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -42,7 +42,12 @@ function startGame() {
 
 // build word to guess
 for (i = 0; i < currentWord.length; i++) {
+  if (currentWord[i] === " ") {
+    lettersInPlay[i] = "-";
+    space = 1;
+  } else {
     lettersInPlay[i] = "__";
+  }
   }
   document.getElementById("currentword-text").innerHTML = lettersInPlay.join(" ");
   document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
@@ -89,7 +94,7 @@ function lettersGuessed() {
        // record those guesses in le
         var userGuess = event.key.toLowerCase();
         var match = false;
-        
+        updateImage();
         console.log(userGuess);
 
 

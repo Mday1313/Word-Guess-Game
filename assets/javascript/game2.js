@@ -1,7 +1,7 @@
 
 // declare array with all the word for the game
 
-var wordChoices = ["reynolds", "solo", "ricksanchez", "morpheus", "leela", "adama", "doctor", "beeblebrox", "picard", "kirk", "robinson", "dallas"];
+var wordChoices = ["mal reynolds", "han solo", "rick sanchez", "morpheus", "leela", "william adama", "the doctor", "beeblebrox", "picard", "kirk", "robinson", "dallas"];
 
 // Create variables to hold scores and guesses remaining
 // var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -43,13 +43,20 @@ function startGame() {
 
 // build word to guess
 for (i = 0; i < currentWord.length; i++) {
-    lettersInPlay[i] = "__";
+    if (currentWord[i] === " ") {
+        lettersInPlay[i] = "-";
+        space = 1;
+      } else {
+        lettersInPlay[i] = "__";
+      }
+    
   }
   document.getElementById("currentword-text").innerHTML = lettersInPlay.join(" ");
   document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
   document.getElementById("wrongGuesses").innerHTML = (" ");
   document.getElementById("wins-text").innerHTML = "Wins: " + wins;
   document.getElementById("losses-text").innerHTML = "Losses: " + losses;
+  
   console.log(currentWord);
 
   lettersGuessed();
@@ -126,20 +133,21 @@ function lettersGuessed() {
             // When current is correctly guessed ++ wins and reset game
             if (match) return;
            
-
+            
             // send wrong guesses to an array to be display on page, count down remaining guesses
 
             if (wrongLetters.indexOf(userGuess) < 0) {
                 wrongLetters.push(userGuess);
                 document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
                 guessesRemaining--;
-                
+               
                 document.getElementById("guessesremaining-text").innerHTML = "Guesses Remaining: " + guessesRemaining;
                
                 console.log(guessesRemaining);
                 
               }
               updateImage();
+              
       
           // if user runs out of guesses add loss and start over with new word
               if (guessesRemaining <= 0) {
@@ -153,7 +161,7 @@ function lettersGuessed() {
             
           };
 
-
+         
 
           startGame();
 
