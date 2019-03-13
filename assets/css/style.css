@@ -2,6 +2,7 @@ body {
     background: url(../images/The-Colors-of-Universe-Wallpaper.jpg);
     color: whitesmoke;
     font-size: 20px;
+    text-shadow: 2px 2px #104e8b;
 }
 
 .glow {
@@ -40,8 +41,13 @@ img {
       color: #104e8b;
       font-family: 'Megrim', cursive;
       font-size: 32px;
+      font-weight: bold;
       text-align: center;
+      text-shadow: 1px 1px #d0f2f1;
 
+  }
+  #small-glow {
+    text-shadow: 3px 3px #d0f2f1;
   }
 
  .guess-info {
@@ -60,6 +66,7 @@ img {
 
   #wrapper {
       background:  #210f1a;
+  
       opacity: 0.75;
       text-align: center;
       font-weight: bold;

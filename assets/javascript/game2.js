@@ -1,3 +1,4 @@
+
 // declare array with all the word for the game
 
 var wordChoices = ["reynolds", "solo", "ricksanchez", "morpheus", "leela", "adama", "doctor", "beeblebrox", "picard", "kirk", "robinson", "dallas"];
@@ -155,3 +156,24 @@ function lettersGuessed() {
 
 
           startGame();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
