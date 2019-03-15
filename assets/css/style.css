@@ -6,7 +6,7 @@ body {
 }
 
 .glow {
-    animation:  glow 3s infinite;
+    animation:  glow 4s infinite;
     color: #210f1a;
     font-size: 100px;
     font-weight: bold;
@@ -43,12 +43,13 @@ img {
       font-size: 32px;
       font-weight: bold;
       text-align: center;
-      text-shadow: 1px 1px #d0f2f1;
+     
 
   }
   #small-glow {
-    text-shadow: 3px 3px #d0f2f1;
+    text-shadow: 2px 2px #d0f2f1;
   }
+
 
  .guess-info {
       text-align: center;
